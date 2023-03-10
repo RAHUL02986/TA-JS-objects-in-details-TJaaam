@@ -1,3 +1,14 @@
+// - `title` (title of the question)
+// - `options` (array of options)
+// - `correctAnswerIndex` (index of the correct option)
+
+// const testData = {
+//     title: 'Where is the capital of Jordan',
+//     options: ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],
+//     correctAnswerIndex: 1,
+//   };
+  
+
 // //without object
 // let title = 'Where is the capital of Jorden';
 // let option = ['Tashkent','Amaan','Kuwait city','Nairobi'];
@@ -34,10 +45,10 @@
 //     quizDemo.title = title;
 //     quizDemo.options = options;
 //     quizDemo.correctAnswerIndex = correctAnswer;
-//     quizDemo.getCorrectAnswer(){
+//     quizDemo.getCorrectAnswer=function(){
 //         return quizDemo.options[quizDemo.correctAnswerIndex];
 //     }
-//     quizDemo.isAnswerCorrect (index) {
+//     quizDemo.isAnswerCorrect = function(index) {
 //         return index === quizDemo.correctAnswerIndex;
 //     };
 //     return quizDemo;
@@ -49,19 +60,20 @@
 
 //convert the function to use `this` keyword
 
-function quiz(title,options,correctAnswer){
+function createQuestion(title,options,correctAnswerIndex){
+    let question = {};
+    question.title = title;
+    question.options = options;
+    question.correctAnswerIndex = correctAnswerIndex;
 
-    let quizDemo = {};
-    quizDemo.title  = title;
-    quizDemo.options = options;
-    quizDemo.correctAnswerIndex = correctAnswer;
-    quizDemo.getCorrectAnswer(){
-        return this.options[this.correctAnswerIndex];
-
-    };
-    quizDemo.isAnswerCorrect(index){
+    question.isCorrectAnswer = function(index){
         return index === this.correctAnswerIndex;
     };
-    return quizDemo;
-}
-const testDat = quiz('where is the capital of Jorden', ['Amaan','Tashkent','kuwait city', 'Nairobi'], 1);
+
+    question.getCorrectAnswer=function(){
+        return this.options[this.correctAnswerIndex];
+        
+    };
+    return question;
+};
+const firstQuestion = createQuestion('where is the capital of Jorden', ['Tashkent', 'Amaan', 'Kuwait City', 'Nairobi'],1);
