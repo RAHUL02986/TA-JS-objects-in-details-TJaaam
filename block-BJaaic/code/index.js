@@ -11,14 +11,15 @@
 
 
 let animalMethod = {
-    eat(){
-console.log(`I live in ${location} and I can eat`);
+    eat: function(){
+console.log(`I live in ${this.location} and I can eat`);
     },
-    changeLocation(newLocation){
+    changeLocation: function(newLocation){
         this.location = newLocation;
+        return this.location;
     },
- summary (){
-    returns `I live in ${location} and I have ${numberOfLegs}`
+ summary: function (){
+    console.log( `I live in ${this.location} and I have ${this.noOfLegs}`);
 
  },
 
@@ -26,10 +27,10 @@ console.log(`I live in ${location} and I can eat`);
 
 };
 
-function animal(location, noOfLages) {
+function animal(location, noOfLegs) {
     let obj = Object.create(animalMethod);
     obj.location = location;
-    obj.legs = noOfLages;
+    obj.noOfLegs = noOfLegs;
     return obj;
 }
 
@@ -62,17 +63,19 @@ let dogMethods ={
         return (`I am ${this.name} and I am of ${this.color} color. I can also bark`);
     },
 };
-Object.setPrototypeOf(dogMethods, animalMethod);
 
 
-function dog(location, noOfLages,name,color){
-    let obj = Object.create(dogMethods);
+function dog(location, noOfLegs,name,color){
+    let obj = animal(location, noOfLegs);
+    Object.setPrototypeOf(obj,dogMethods);
     obj.location = location;
-    obj.legs = noOfLages;
+    obj.noOfLegs = noOfLegs;
     obj.name = name;
     obj.color = color;
     return obj;
 }
+
+Object.setPrototypeOf(dogMethods, animal);
 
 
 
@@ -112,12 +115,14 @@ let catMethods = {
 
     
 }
-Object.setPrototypeOf(catMethods,animalMethod);
-function cat(location, noOfLages, name, colorOfEyes){
-    let obj = Object.create(catMethods);
+function cat(location, noOfLegs, name, colorOfEyes){
+    let obj = animal(location, noOfLegs);
+    Object.setPrototypeOf(obj,catMethods);
+
     obj.location = location;
-    obj.legs = noOfLages;
+    obj.noOfLegs = noOfLegs;
     obj.name = name;
     obj.colorOfEyes = colorOfEyes;
     return obj;
 }
+Object.setPrototypeOf(catMethods, animal);
