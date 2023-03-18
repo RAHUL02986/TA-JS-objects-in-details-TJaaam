@@ -7,4 +7,4 @@ Convert the give image into class using inheritance.
 
 Property ending with `()` is method. And others are properties.
 
-![Inheritance](../assets/inheritance.png)
+![](../assets/inheritance.png)
