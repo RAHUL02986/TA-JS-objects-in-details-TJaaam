@@ -1,0 +1,128 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* custom style */
+html{
+    font-size: 16px;
+}
+body{
+    line-height: 1.5;
+    background-color: darkseagreen;
+    font-size: 1rem;
+}
+.container{
+    max-width: 1000px;
+    margin: 10rem auto;
+    background-color:beige;
+    padding:1rem 2.5rem;
+
+}
+input{
+    width: 98%;
+    height: 1.5rem;
+    margin-top: 1.4rem;
+}
+form input:active {
+    outline: 1px solid black;
+  }
+  
+label{
+    font-size: 1.5rem;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+h1 span,i{
+    color: lightseagreen;
+
+}
+
+button{
+    width: 98.6%;
+    margin-top: 1.5rem;
+    padding: .3rem 0;
+    font-size: 1.5rem;
+     background-color: lightseagreen;
+     border: none;
+     color: white;
+}
+button:hover{
+    background-color: #77b810;
+    color: black;
+    
+}
+
+.book-list li {
+    width: 98%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  
+  .book-list .read_btn {
+    padding: 1rem 1.5rem;
+    background-color: #4b234b;
+    color: #c6c5cc;
+    text-transform: capitalize;
+  }
+  
+  .book-list .read_btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
